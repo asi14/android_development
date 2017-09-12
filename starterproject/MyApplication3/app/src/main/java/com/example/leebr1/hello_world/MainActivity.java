@@ -31,4 +31,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    public void addListenerOnButton2(){
+        button = (Button) findViewById(R.id.button2);
+        button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, android.net.Uri.parse("http://bxscience.edu"));
+                startActivity(browserIntent);
+            }
+        });
+    }
 }
