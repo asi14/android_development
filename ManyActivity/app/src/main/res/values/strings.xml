@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ManyActivity</string>
+    <string name="edit_messagge">Enter a Message</string>
+    <string name="button_send">Send</string>
+</resources>
