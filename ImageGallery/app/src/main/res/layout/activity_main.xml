@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context="com.example.leebr1.imagegallery.MainActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/imagegallery"
+    <ListView
+        android:id="@+id/gallery"
         android:layout_width="368dp"
         android:layout_height="495dp"
         android:layout_marginBottom="8dp"

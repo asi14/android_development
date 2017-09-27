@@ -4,22 +4,37 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
-    RecyclerView imageGallery;
-    RecyclerView.LayoutManager layout;
-    /*ArrayList<CreateList> createList;*/
+    ListView gallery;
+    Integer[] ImageList = {
+            R.drawable.picture1,
+    R.drawable.picture2,
+    R.drawable.picture3,
+    R.drawable.picture4,
+    R.drawable.picture5,
+    R.drawable.picture6,
+    R.drawable.picture7
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        imageGallery = (RecyclerView)findViewById(R.id.imagegallery);
-        imageGallery.setHasFixedSize(true);
-        layout = new GridLayoutManager(getApplicationContext(),2);
-        imageGallery.setLayoutManager(layout);
-        /*createList = prepareData();*/
-        MyAdapter adapter = new MyAdapter(getApplicationContext());
-        imageGallery.setAdapter(adapter);
+
+        gallery = (ListView)findViewById(R.id.gallery);
+        gallery.setAdapter(new ImageAdapter(this, ImageList));
+        gallery.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Log.d("click","clicky");
+            }
+        });
+
     }
 }
 
